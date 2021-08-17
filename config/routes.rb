@@ -18,4 +18,14 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show, :update]
     resources :ordered_items, only: [:update]
   end
+  
+  namespace :customer do
+    resources :customers,only: [:show,:edit,:update,:destroy]
+    resources :cart_items,only:[:index,:create,:destroy,:update]
+    resources :items,only:[:index,:edit,:show,:create]
+    resources :shipping_addresses,only:[:index,:create,:edit,:destroy,:update]
+    resources :orders,only:[:index,:show,:new,:create]
+    # CartItem
+    get 'cart_item/destroy_all' => 'cart_items#destroy_all'
+  end
 end
