@@ -19,6 +19,7 @@ class Customer::OrdersController < ApplicationController
     @order.shipping_cost = 800
     @order.save!
     @cart_items = current_customer.cart_items
+    
     @cart_items.each do |cart_item|
       @ordered_item = OrderedItem.new
       @ordered_item.order_id = @order.id
