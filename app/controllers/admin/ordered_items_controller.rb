@@ -15,6 +15,6 @@ class Admin::OrderedItemsController < ApplicationController
   private
 
   def ordered_items_params
-      params.require(:ordered_item).permit(:making_status)
+    params.require(:ordered_item).permit(:making_status)
   end
 end
